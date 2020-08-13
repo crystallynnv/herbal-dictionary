@@ -1,0 +1,18 @@
+<%- include('../partials/header') %>
+<h4>Add a Remedy</h4>
+
+<form method="POST" id="new-form" action="/herbs/<%= id %>/remedies">
+<label>Remedy:</label>
+<input type="text" name="name">
+<label>Herbs:</label>
+<input type="text" name="herbs">
+<label>How to Make:</label>
+<input type="text" name="make">
+
+<label>How to use:</label>
+<input type="text" name="use">
+<input type="submit" value="Add Remedy">
+</form>
+
+</body>
+</html>

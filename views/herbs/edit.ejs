@@ -1,0 +1,16 @@
+<%- include('../partials/header') %>
+
+    <h4>Edit Herb</h4>
+    <form action="/herbs/update/<%= herb._id %>?_method=PUT" id="new-form" method="POST">
+        <label>Name:</label>
+        <input type="text" name="name" value="<%= herb.name%>">
+        <label>Benefits:</label>
+        <input type="text" name="benefits" value="<%= herb.benefits%>">
+        <label>Uses:</label>
+        <input type="text" name="uses" value="<%= herb.uses%>">
+        
+        <input type="submit" value="Save Changes" class="waves-effect waves-light btn-small">
+    </form>
+</body>
+
+</html>

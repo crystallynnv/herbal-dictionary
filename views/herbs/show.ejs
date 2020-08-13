@@ -1,0 +1,43 @@
+<%- include('../partials/header') %>
+  <h4>Herb Details</h4>
+  
+    <section id="show-page">
+    <div>Name: </div>
+    <div><%= herb.name %></div>
+    <div>Benefits: </div>
+    <div><%= herb.benefits %></div>
+    <div>Uses: </div>
+    <div><%= herb.uses %></div>
+
+    </section><br><br>
+    <form method="GET" action="/herbs/<%= herb._id %>/edit">
+      <button type="submit" class="waves-effect waves-light btn-small center-me">Edit</button>
+    </form>
+
+    <form method="GET" action="/herbs/<%= herb._id %>/remedies/new">
+      <input type="submit" value="Add a Remedy" class="waves-effect waves-light btn-small">
+    </form>
+
+      
+
+    <% if (herb.remedies) { %>
+      <h4>Remedies</h4>
+      <% herb.remedies.forEach(function(r){ %>
+    <div class="row">
+      <div class="col s12 m6">
+        <div class="card grey darken-1">
+          <div class="card-content white-text">
+            <span class="card-title"><%=  r.name %></span>
+            <p>Herbs: <%=  r.herbs %></p>
+            <p>How to make: <%=  r.make %></p>
+            <p>How to use: <%=  r.use %></p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <% }); %>
+    <% } %>
+
+</body>
+</html>
